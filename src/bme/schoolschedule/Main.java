@@ -13,9 +13,6 @@ public class Main {
         ArrayList<Rooms> rooms = new ArrayList<>();
         ArrayList<Teachers> teachers = new ArrayList<>();
 
-        room r = room.valueOf("PE");
-        System.out.println(r);
-
         inputReader(classes, teachers, teachers, "teachers");
         inputReader(classes, teachers, classes, "classes");
         inputReader(classes, teachers, lessons, "lessons");
@@ -23,7 +20,7 @@ public class Main {
 
         //kiirasC(classes);
         //kiirasL(lessons);
-        kiirasR(rooms);
+        //kiirasR(rooms);
         //kiirasT(teachers);
 
 
@@ -36,17 +33,16 @@ public class Main {
             BufferedReader reader = new BufferedReader(new InputStreamReader(in));
             String currentLine = reader.readLine();
             while (currentLine != null) {
-                String[] line = currentLine.split("/t");
+                String[] line = currentLine.split("\t");
                 if (type.equals("classes"))
                     arrayList.add(new Classes(line[0], Integer.parseInt(line[1])));
                 else if (type.equals("teachers"))
                     arrayList.add(new Teachers(line[0], Integer.parseInt(line[1])));
                 else if (type.equals("lessons"))
                     arrayList.add(new Lessons(findClass(line[0], classes), line[1], Integer.parseInt(line[2]), findTeacher(line[3], teachers)));
-                else {
-                    String str = line[0];
-                    arrayList.add((new Rooms(room.valueOf(str), line[1], Integer.parseInt(line[2]))));
-                }
+                else
+                    arrayList.add(new Rooms(room.valueOf(line[0]), line[1], Integer.parseInt(line[2])));
+
                 currentLine = reader.readLine();
             }
             reader.close();
@@ -95,7 +91,6 @@ public class Main {
     }
     public static void kiirasR(ArrayList<Rooms> arrayList){
         for(int i = 0; i < arrayList.size(); i++){
-            System.out.println(arrayList.get(i).getName());
             System.out.println(arrayList.get(i).getType());
         }
     }

@@ -8,11 +8,13 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
+        //külön listában tároljuk az osztályokat, órákat, termeket, tanárokat
         ArrayList<Classes> classes = new ArrayList<>();
         ArrayList<Lessons> lessons = new ArrayList<>();
         ArrayList<Rooms> rooms = new ArrayList<>();
         ArrayList<Teachers> teachers = new ArrayList<>();
 
+        //egy csúnya függvénnyel beolvassuk őket
         inputReader(classes, teachers, teachers, "teachers");
         inputReader(classes, teachers, classes, "classes");
         inputReader(classes, teachers, lessons, "lessons");
@@ -29,11 +31,13 @@ public class Main {
 
     public static void inputReader(ArrayList<Classes> classes, ArrayList<Teachers> teachers, ArrayList arrayList, String type) {
         try {
+            //fontos hogy a res-ben kell tárolni a fileokat
             InputStream in = Main.class.getResourceAsStream("/" + type + ".txt");
             BufferedReader reader = new BufferedReader(new InputStreamReader(in));
             String currentLine = reader.readLine();
             while (currentLine != null) {
                 String[] line = currentLine.split("\t");
+                //megnézi hogy miket olvasunk be
                 if (type.equals("classes"))
                     arrayList.add(new Classes(line[0], Integer.parseInt(line[1])));
                 else if (type.equals("teachers"))
@@ -47,14 +51,12 @@ public class Main {
             }
             reader.close();
         } catch (
-                FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (
                 IOException e) {
             e.printStackTrace();
         }
     }
 
+    //megkeresi az osztályt egy tanórához
     public static Classes findClass(String s, ArrayList<Classes> arrayList) {
         for (Classes cl : arrayList) {
             if (cl.getName().equals(s))
@@ -63,7 +65,7 @@ public class Main {
         return null;
     }
 
-
+    //megkeresi a tanárt egy tanórához
     public static Teachers findTeacher(String s, ArrayList<Teachers> arrayList){
         for (Teachers t : arrayList) {
             if(t.getName().equals(s))
@@ -72,6 +74,8 @@ public class Main {
         return null;
     }
 
+
+    //ezek csak a beolvasás teszteléséhez kellettek
     public static void kiirasC(ArrayList<Classes> arrayList){
         for(int i = 0; i < arrayList.size(); i++){
             System.out.println(arrayList.get(i).getName());

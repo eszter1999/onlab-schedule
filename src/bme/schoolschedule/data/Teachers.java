@@ -1,8 +1,8 @@
 package bme.schoolschedule.data;
 
 public class Teachers {
-    String name;
-    int working_hour;
+    String name;        //id
+    int working_hour;   //the maximum
 
     public Teachers(String n, int w){
         name = n;

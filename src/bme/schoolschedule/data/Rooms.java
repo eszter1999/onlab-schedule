@@ -4,8 +4,8 @@ import bme.schoolschedule.room;
 
 public class Rooms {
     room type;
-    String name;
-    int size;
+    String name;    //id
+    int size;       //capacity
 
     public Rooms(room t, String n, int s) {
         type = t;

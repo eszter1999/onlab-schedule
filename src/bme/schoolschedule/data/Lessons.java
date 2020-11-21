@@ -1,10 +1,13 @@
 package bme.schoolschedule.data;
 
 public class Lessons {
-    Classes classes;
-    String name;
-    int number;
-    Teachers teacher;
+    Classes classes;    //the students attending the class
+    String name;        //the subject of the class
+    int number;         //frequency per week
+    Teachers teacher;   //who teaches the class
+    /*to set*/
+    int time; //to change from int
+    Rooms room; //where
 
     public Lessons(Classes c, String name, int number, Teachers t){
         this.classes = c;
@@ -12,8 +15,5 @@ public class Lessons {
         this.number = number;
         this.teacher = t;
     }
-
-    public String getName(){
-        return name;
-    }
+    public String getName(){ return name;}
 }

@@ -1,9 +1,9 @@
 package bme.schoolschedule.data;
 
 public class Classes {
-    int id;
-   private String name;
-   private int number; //number of students in class
+    final int id;
+    private String name;    //unique
+    private int number;     //number of students in class
 
     public Classes(int i, String name, int number) {
         id = i;
@@ -14,4 +14,6 @@ public class Classes {
     public String getName(){
         return name;
     }
+    public int getNumber() {return number;}
+    public int getId() {return id;}
 }

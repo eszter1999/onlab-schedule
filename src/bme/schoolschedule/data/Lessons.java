@@ -1,6 +1,7 @@
 package bme.schoolschedule.data;
 
 public class Lessons {
+    int id;
     Classes classes;    //the students attending the class
     String name;        //the subject of the class
     int number;         //frequency per week
@@ -9,7 +10,8 @@ public class Lessons {
     int time; //to change from int
     Rooms room; //where
 
-    public Lessons(Classes c, String name, int number, Teachers t){
+    public Lessons(int i, Classes c, String name, int number, Teachers t){
+        id = i;
         this.classes = c;
         this.name = name;
         this.number = number;

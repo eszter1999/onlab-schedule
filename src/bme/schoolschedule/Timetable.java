@@ -1,0 +1,97 @@
+package bme.schoolschedule;
+
+import bme.schoolschedule.data.Classes;
+import bme.schoolschedule.data.Lessons;
+import bme.schoolschedule.data.Rooms;
+import bme.schoolschedule.data.Teachers;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Timetable {
+
+    private final HashMap<Integer, Rooms> rooms;
+    private final HashMap<Integer, Classes> classes;
+    private final HashMap<Integer, Teachers> teachers;
+    private final HashMap<Integer, Lessons> lessons;
+
+    public Timetable() {
+        this.rooms = new HashMap<>();
+        this.classes = new HashMap<>();
+        this.teachers = new HashMap<>();
+        this.lessons = new HashMap<>();
+
+    }
+
+    //add room to timetable
+    public void addRoom(int roomId, room type, String roomName, int capacity) {
+        this.rooms.put(roomId, new Rooms(roomId, type, roomName, capacity));
+    }
+
+    //add teacher to timetable
+    public void addTeacher(int teacherId, String teacherName, int working_hour) {
+        this.teachers.put(teacherId, new Teachers(teacherId, teacherName, working_hour));
+    }
+
+    //add class to timetable
+    public void addClass(int classID, String className, int classCapacity){
+        this.classes.put(classID, new Classes(classID, className, classCapacity));
+    }
+
+    //add lessons to timetable
+    public void addLessons(int lessonId, Classes classes, String lessonName, int LessonNPW, Teachers teachers){
+        this.lessons.put(lessonId, new Lessons(lessonId, classes, lessonName, LessonNPW, teachers));
+    }
+
+    //get a class for add to a lesson
+    public Classes getClasses(String name){
+        for (Map.Entry<Integer, Classes> entry : classes.entrySet()) {
+            Classes value = entry.getValue();
+            if (value.getName().equals(name)) {
+                return value;
+            }
+        }
+        return null;
+    }
+
+    //get a teacher for add a lesson
+    public Teachers getTeacher(String name){
+        for (Map.Entry<Integer, Teachers> entry : teachers.entrySet()) {
+            Teachers value = entry.getValue();
+            if (value.getName().equals(name)) {
+                return value;
+            }
+        }
+        return null;
+    }
+
+
+    //ezek csak a beolvasás teszteléséhez kellettek
+    public void kiirasT(){
+        for (Map.Entry<Integer, Teachers> entry : teachers.entrySet()) {
+            Teachers value = entry.getValue();
+            System.out.println(value.getName());
+        }
+    }
+
+    public void kiirasC(){
+        for (Map.Entry<Integer, Classes> entry : classes.entrySet()) {
+            Classes value = entry.getValue();
+            System.out.println(value.getName());
+        }
+    }
+
+    public void kiirasL(){
+        for (Map.Entry<Integer, Lessons> entry : lessons.entrySet()) {
+            Lessons value = entry.getValue();
+            System.out.println(value.getName());
+        }
+    }
+
+    public void kiirasR(){
+        for (Map.Entry<Integer, Rooms> entry : rooms.entrySet()) {
+            Rooms value = entry.getValue();
+            System.out.println(value.getType());
+        }
+    }
+}

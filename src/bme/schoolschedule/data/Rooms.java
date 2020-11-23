@@ -3,14 +3,16 @@ package bme.schoolschedule.data;
 import bme.schoolschedule.room;
 
 public class Rooms {
+    int id;
     room type;
     String name;    //id
-    int size;       //capacity
+    int capacity;       //capacity
 
-    public Rooms(room t, String n, int s) {
+    public Rooms(int id, room t, String n, int s) {
+        this.id = id;
         type = t;
         name = n;
-        size = s;
+        capacity = s;
     }
      public String getName(){
         return name;

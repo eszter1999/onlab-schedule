@@ -70,28 +70,28 @@ public class Timetable {
     public void kiirasT(){
         for (Map.Entry<Integer, Teachers> entry : teachers.entrySet()) {
             Teachers value = entry.getValue();
-            System.out.println(value.getName());
+            System.out.println(value.getName() + "\t" + entry.getKey());
         }
     }
 
     public void kiirasC(){
         for (Map.Entry<Integer, Classes> entry : classes.entrySet()) {
             Classes value = entry.getValue();
-            System.out.println(value.getName());
+            System.out.println(value.getName() + "\t" + entry.getKey());
         }
     }
 
     public void kiirasL(){
         for (Map.Entry<Integer, Lessons> entry : lessons.entrySet()) {
             Lessons value = entry.getValue();
-            System.out.println(value.getName());
+            System.out.println(value.getName() + "\t" + entry.getKey());
         }
     }
 
     public void kiirasR(){
         for (Map.Entry<Integer, Rooms> entry : rooms.entrySet()) {
             Rooms value = entry.getValue();
-            System.out.println(value.getType());
+            System.out.println(value.getType() + "\t" + entry.getKey());
         }
     }
 }

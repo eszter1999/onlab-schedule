@@ -21,6 +21,8 @@ public class Timetable {
         this.timeslots = new HashMap<>();
     }
 
+    public int getNumClasses(){return  classes.size();}
+
     //add room to timetable
     public void addRoom(int roomId, room type, String roomName, int capacity) {
         this.rooms.put(roomId, new Rooms(roomId, type, roomName, capacity));
@@ -51,6 +53,7 @@ public class Timetable {
         }
         return null;
     }
+
 
     //get a teacher for add a lesson
     public int getTeacher(String name){

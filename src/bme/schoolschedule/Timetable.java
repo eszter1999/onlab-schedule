@@ -1,9 +1,6 @@
 package bme.schoolschedule;
 
-import bme.schoolschedule.data.Classes;
-import bme.schoolschedule.data.Lessons;
-import bme.schoolschedule.data.Rooms;
-import bme.schoolschedule.data.Teachers;
+import bme.schoolschedule.data.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,13 +11,14 @@ public class Timetable {
     private final HashMap<Integer, Classes> classes;
     private final HashMap<Integer, Teachers> teachers;
     private final HashMap<Integer, Lessons> lessons;
+    private final HashMap<Integer, Timeslot> timeslots;
 
     public Timetable() {
         this.rooms = new HashMap<>();
         this.classes = new HashMap<>();
         this.teachers = new HashMap<>();
         this.lessons = new HashMap<>();
-
+        this.timeslots = new HashMap<>();
     }
 
     //add room to timetable
@@ -39,8 +37,8 @@ public class Timetable {
     }
 
     //add lessons to timetable
-    public void addLessons(int lessonId, Classes classes, String lessonName, int LessonNPW, Teachers teachers){
-        this.lessons.put(lessonId, new Lessons(lessonId, classes, lessonName, LessonNPW, teachers));
+    public void addLessons(int lessonId, Classes classes, String lessonName, int LessonNPW, int teacher){
+        this.lessons.put(lessonId, new Lessons(lessonId, classes, lessonName, LessonNPW, teacher));
     }
 
     //get a class for add to a lesson
@@ -55,14 +53,14 @@ public class Timetable {
     }
 
     //get a teacher for add a lesson
-    public Teachers getTeacher(String name){
+    public int getTeacher(String name){
         for (Map.Entry<Integer, Teachers> entry : teachers.entrySet()) {
             Teachers value = entry.getValue();
             if (value.getName().equals(name)) {
-                return value;
+                return value.getId();
             }
         }
-        return null;
+        return 0;
     }
 
 
@@ -70,28 +68,28 @@ public class Timetable {
     public void kiirasT(){
         for (Map.Entry<Integer, Teachers> entry : teachers.entrySet()) {
             Teachers value = entry.getValue();
-            System.out.println(value.getName());
+            System.out.println(value.getName() + "\t" + entry.getKey());
         }
     }
 
     public void kiirasC(){
         for (Map.Entry<Integer, Classes> entry : classes.entrySet()) {
             Classes value = entry.getValue();
-            System.out.println(value.getName());
+            System.out.println(value.getName() + "\t" + entry.getKey());
         }
     }
 
     public void kiirasL(){
         for (Map.Entry<Integer, Lessons> entry : lessons.entrySet()) {
             Lessons value = entry.getValue();
-            System.out.println(value.getName());
+            System.out.println(value.getName() + "\t" + entry.getKey());
         }
     }
 
     public void kiirasR(){
         for (Map.Entry<Integer, Rooms> entry : rooms.entrySet()) {
             Rooms value = entry.getValue();
-            System.out.println(value.getType());
+            System.out.println(value.getType() + "\t" + entry.getKey());
         }
     }
 }

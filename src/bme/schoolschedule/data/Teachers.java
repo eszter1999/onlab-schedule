@@ -14,7 +14,9 @@ public class Teachers {
     public String getName(){
         return name;
     }
+
     public int getId(){return id;}
     public int getWorking_hour(){return working_hour;}
+
 }
 

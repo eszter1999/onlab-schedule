@@ -6,6 +6,7 @@ public class Lessons {
     String name;        //the subject of the class
     int number;         //frequency per week
     int teacherId;   //who teaches the class
+
     /*to set*/
     int time; //to change from int
     Rooms room; //where
@@ -18,4 +19,18 @@ public class Lessons {
         this.teacherId = teacher;
     }
     public String getName(){ return name;}
+    public Classes getClasses() {return classes;}
+    public int getId() {return id;}
+    public int getNumber() {return number;}
+    public Teachers getTeacher() { return teacher; }
+
+    public void setTime(int time) {this.time = time;}
+    public int getTime() {return time;}
+    public void setRoom(Rooms room) {this.room=room;}
+    public Rooms getRoom() { return room; }
+
+    /*public String toString(){
+        String s = "time" + " - " + "room" +
+        return "";
+    }*/
 }

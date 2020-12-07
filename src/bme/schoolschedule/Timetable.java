@@ -41,6 +41,10 @@ public class Timetable {
         this.lessons.put(lessonId, new Lessons(lessonId, classes, lessonName, LessonNPW, teacher));
     }
 
+    public void addTimeslot(int timeslotId, String timeslot) {
+        this.timeslots.put(timeslotId, new Timeslot(timeslotId, timeslot));
+    }
+
     //get a class for add to a lesson
     public Classes getClasses(String name){
         for (Map.Entry<Integer, Classes> entry : classes.entrySet()) {
@@ -69,6 +73,13 @@ public class Timetable {
         for (Map.Entry<Integer, Teachers> entry : teachers.entrySet()) {
             Teachers value = entry.getValue();
             System.out.println(value.getName() + "\t" + entry.getKey());
+        }
+    }
+
+    public void kiirasTS(){
+        for (Map.Entry<Integer, Timeslot> entry : timeslots.entrySet()) {
+            Timeslot value = entry.getValue();
+            System.out.println(value.getTimeslot() + "\t" + entry.getKey());
         }
     }
 

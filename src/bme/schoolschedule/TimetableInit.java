@@ -14,10 +14,11 @@ public class TimetableInit {
         timetable = tt;
         initTimetable();
 
-        timetable.kiirasC();
+        /*timetable.kiirasC();
         timetable.kiirasL();
         timetable.kiirasR();
         timetable.kiirasT();
+        timetable.kiirasTS();*/
     }
 
     //add teachers, classes, rooms and lessons to the timetable
@@ -26,6 +27,7 @@ public class TimetableInit {
         inputReader("classes");
         inputReader("lessons");
         inputReader("rooms");
+        inputReader("timeslot");
     }
 
     private void inputReader(String type) {
@@ -48,6 +50,9 @@ public class TimetableInit {
                         break;
                     case "lessons":
                         timetable.addLessons(num, timetable.getClasses(line[0]), line[1], Integer.parseInt(line[2]), timetable.getTeacher(line[3]));
+                        break;
+                    case "timeslot":
+                        timetable.addTimeslot(num, line[0]);
                         break;
                     default:
                         timetable.addRoom(num, room.valueOf(line[0]), line[1], Integer.parseInt(line[2]));

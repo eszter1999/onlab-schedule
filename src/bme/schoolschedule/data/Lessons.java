@@ -22,7 +22,7 @@ public class Lessons {
     public Classes getClasses() {return classes;}
     public int getId() {return id;}
     public int getNumber() {return number;}
-    public Teachers getTeacher() { return teacher; }
+    public int getTeacher() { return teacherId; }
 
     public void setTime(int time) {this.time = time;}
     public int getTime() {return time;}

@@ -61,7 +61,7 @@ public class Timetable {
         for (Map.Entry<Integer, Teachers> entry : teachers.entrySet()) {
             Teachers value = entry.getValue();
             if (value.getName().equals(name)) {
-                return value.getId();
+                return entry.getKey();
             }
         }
         return 0;

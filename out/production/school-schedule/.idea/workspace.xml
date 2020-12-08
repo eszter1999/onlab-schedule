@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0fbf8905-a4a2-48e2-8e76-a60818fd837a" name="Default Changelist" comment="" />
+    <list default="true" id="a5be17ce-a3d6-4430-a8db-bb709a308844" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +10,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1lL7NatRAWvvbAaenyTWfmfO7Zu" />
+  <component name="ProjectId" id="1lO6wNuvIvCI8jYssJXZXYMzIxr" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -28,27 +28,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0fbf8905-a4a2-48e2-8e76-a60818fd837a" name="Default Changelist" comment="" />
-      <created>1607364485791</created>
+      <changelist id="a5be17ce-a3d6-4430-a8db-bb709a308844" name="Default Changelist" comment="" />
+      <created>1607456031124</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1607364485791</updated>
-      <workItem from="1607364499346" duration="114000" />
+      <updated>1607456031124</updated>
+      <workItem from="1607456041824" duration="266000" />
     </task>
     <servers />
   </component>
@@ -56,13 +45,13 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="0" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607364612925">
+    <state x="9" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607456308403">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1607364612925" />
-    <state x="275" y="322" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1607364608334">
+    <state x="9" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1607456308403" />
+    <state x="284" y="322" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1607456307119">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="275" y="322" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1607364608334" />
+    <state x="284" y="322" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1607456307119" />
   </component>
 </project>

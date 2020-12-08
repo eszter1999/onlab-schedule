@@ -18,23 +18,16 @@ public class Lessons {
         this.number = number;
         this.teacherId = teacher;
     }
-    public String getName(){ return name;}
+    /////*setters*/////
     public Classes getClasses() {return classes;}
     public int getId() {return id;}
     public int getNumber() {return number;}
-<<<<<<< Updated upstream
-    public Teachers getTeacher() { return teacherId; }
-=======
     public int getTeacher() { return teacherId; }
->>>>>>> Stashed changes
 
+/////*getters*/////
     public void setTime(int time) {this.time = time;}
     public int getTime() {return time;}
     public void setRoom(Rooms room) {this.room=room;}
     public Rooms getRoom() { return room; }
-
-    /*public String toString(){
-        String s = "time" + " - " + "room" +
-        return "";
-    }*/
+    public String getName(){ return name;}
 }

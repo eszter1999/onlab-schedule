@@ -23,6 +23,8 @@ public class Timetable {
 
     public int getNumClasses(){return  classes.size();}
 
+
+    /////*adders*/////
     //add room to timetable
     public void addRoom(int roomId, room type, String roomName, int capacity) {
         this.rooms.put(roomId, new Rooms(roomId, type, roomName, capacity));
@@ -41,15 +43,14 @@ public class Timetable {
     //add lessons to timetable
     public void addLessons(int lessonId, Classes classes, String lessonName, int LessonNPW, int teacher){
         this.lessons.put(lessonId, new Lessons(lessonId, classes, lessonName, LessonNPW, teacher));
-<<<<<<< Updated upstream
-=======
     }
 
     public void addTimeslot(int timeslotId, String timeslot) {
         this.timeslots.put(timeslotId, new Timeslot(timeslotId, timeslot));
->>>>>>> Stashed changes
     }
 
+
+    /////*getters*/////
     //get a class for add to a lesson
     public Classes getClasses(String name){
         for (Map.Entry<Integer, Classes> entry : classes.entrySet()) {
@@ -61,10 +62,6 @@ public class Timetable {
         return null;
     }
 
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
     //get a teacher for add a lesson
     public int getTeacher(String name){
         for (Map.Entry<Integer, Teachers> entry : teachers.entrySet()) {
@@ -77,6 +74,7 @@ public class Timetable {
     }
 
 
+    /////*print*/////
     //ezek csak a beolvasás teszteléséhez kellettek
     public void kiirasT(){
         for (Map.Entry<Integer, Teachers> entry : teachers.entrySet()) {
@@ -85,7 +83,7 @@ public class Timetable {
         }
     }
 
-    public void kiirasC(){
+    public void kiirasC() {
         for (Map.Entry<Integer, Classes> entry : classes.entrySet()) {
             Classes value = entry.getValue();
             System.out.println(value.getName() + "\t" + entry.getKey());

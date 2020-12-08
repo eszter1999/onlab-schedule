@@ -24,8 +24,8 @@ public class TimetableInit {
     //add teachers, classes, rooms and lessons to the timetable
     private void initTimetable(){
         inputReader("teachers");
-        inputReader("classes");
         inputReader("lessons");
+        inputReader("groups");
         inputReader("rooms");
         inputReader("timeslot");
     }
@@ -42,15 +42,14 @@ public class TimetableInit {
                 String[] line = currentLine.split("\t");
                 //megnézi hogy miket olvasunk be
                 switch (type) {
-                    case "classes":
-                        timetable.addClass(num, line[0], Integer.parseInt(line[1]));
+                    case "groups":
+                        timetable.addGroup(num, line[0], Integer.parseInt(line[1]), timetable.getLessons(line[0]));
                         break;
                     case "teachers":
                         timetable.addTeacher(num, line[0], Integer.parseInt(line[1]));
                         break;
                     case "lessons":
-                        System.out.println(line[0] + " " + line[1] + " " + line[2]);
-                        timetable.addLessons(num, timetable.getClasses(line[0]), line[1], Integer.parseInt(line[2]), timetable.getTeacher(line[3]));
+                        timetable.addLessons(num, line[0], line[1], Integer.parseInt(line[2]), timetable.getTeacher(line[3]), room.valueOf(line[4]));
                         break;
                     case "timeslot":
                         timetable.addTimeslot(num, line[0]);

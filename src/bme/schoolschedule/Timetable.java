@@ -2,20 +2,24 @@ package bme.schoolschedule;
 
 import bme.schoolschedule.data.*;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Timetable {
 
     private final HashMap<Integer, Rooms> rooms;
-    private final HashMap<Integer, Classes> classes;
+    private final HashMap<Integer, Group> groups;
     private final HashMap<Integer, Teachers> teachers;
     private final HashMap<Integer, Lessons> lessons;
     private final HashMap<Integer, Timeslot> timeslots;
 
+    private int numClasses = 0;
+
     public Timetable() {
         this.rooms = new HashMap<>();
-        this.classes = new HashMap<>();
+        this.groups = new HashMap<>();
         this.teachers = new HashMap<>();
         this.lessons = new HashMap<>();
         this.timeslots = new HashMap<>();
@@ -32,13 +36,14 @@ public class Timetable {
     }
 
     //add class to timetable
-    public void addClass(int classID, String className, int classCapacity){
-        this.classes.put(classID, new Classes(classID, className, classCapacity));
+    public void addGroup(int classID, String className, int classCapacity, int[] lessonsIds){
+        this.groups.put(classID, new Group(classID, className, classCapacity, lessonsIds));
+        this.numClasses = 0;
     }
 
     //add lessons to timetable
-    public void addLessons(int lessonId, Classes classes, String lessonName, int LessonNPW, int teacher){
-        this.lessons.put(lessonId, new Lessons(lessonId, classes, lessonName, LessonNPW, teacher));
+    public void addLessons(int lessonId, String group, String lessonName, int LessonNPW, int teacher, room type){
+        this.lessons.put(lessonId, new Lessons(lessonId, group, lessonName, LessonNPW, teacher, type));
     }
 
     public void addTimeslot(int timeslotId, String timeslot) {
@@ -46,14 +51,54 @@ public class Timetable {
     }
 
     //get a class for add to a lesson
-    public Classes getClasses(String name){
-        for (Map.Entry<Integer, Classes> entry : classes.entrySet()) {
-            Classes value = entry.getValue();
+    public int[] getLessons(String name){
+        ArrayList<Integer> lesson = new ArrayList<>();
+        for (Map.Entry<Integer, Lessons> entry : lessons.entrySet()) {
+            Lessons value = entry.getValue();
+            if (value.getGroup().equals(name)) {
+                lesson.add(value.getId());
+            }
+        }
+        int[] l = new int[lesson.size()];
+        for(int i = 0; i < lesson.size(); i++)
+            l[i] = lesson.get(i);
+        return l;
+    }
+
+    //get a group
+    public Group getGroup(String name){
+        for (Map.Entry<Integer, Group> entry : groups.entrySet()) {
+            Group value = entry.getValue();
             if (value.getName().equals(name)) {
                 return value;
             }
         }
         return null;
+    }
+
+    public Group[] getGroupsAsArray() {
+        return this.groups.values().toArray(new Group[this.groups.size()]);
+    }
+
+    public Timeslot getRandomTimeslot() {
+        Object[] timeslotArray = this.timeslots.values().toArray();
+        Timeslot timeslot = (Timeslot) timeslotArray[(int) (timeslotArray.length * Math.random())];
+        return timeslot;
+    }
+
+    public int getLessonRoomType(int lessonid){
+        for (Map.Entry<Integer, Lessons> entry : lessons.entrySet()) {
+            Lessons value = entry.getValue();
+            if(value.getId() == lessonid)
+                return 1 ; //value.getType()
+        }
+        return 1;
+    }
+
+    public Rooms getRandomRoom() {
+        Object[] roomsArray = this.rooms.values().toArray();
+        Rooms room = (Rooms) roomsArray[(int) (roomsArray.length * Math.random())];
+        return room;
     }
 
     //get a teacher for add a lesson
@@ -67,6 +112,20 @@ public class Timetable {
         return 0;
     }
 
+    public int getNumClasses() {
+        if (this.numClasses > 0) {
+            return this.numClasses;
+        }
+
+        int numClasses = 0;
+        Group groups[] = this.groups.values().toArray(new Group[this.groups.size()]);
+        for (Group group : groups) {
+            numClasses += group.getLessonsIds().length;
+        }
+        this.numClasses = numClasses;
+
+        return this.numClasses;
+    }
 
     //ezek csak a beolvasás teszteléséhez kellettek
     public void kiirasT(){
@@ -84,9 +143,12 @@ public class Timetable {
     }
 
     public void kiirasC(){
-        for (Map.Entry<Integer, Classes> entry : classes.entrySet()) {
-            Classes value = entry.getValue();
-            System.out.println(value.getName() + "\t" + entry.getKey());
+        for (Map.Entry<Integer, Group> entry : groups.entrySet()) {
+            Group value = entry.getValue();
+            System.out.print(value.getName() + "\t" + " ");
+            for(int i = 0; i < value.getLessonsIds().length; i++)
+                System.out.print(value.getLessonsIds()[i] + " ");
+            System.out.println();
         }
     }
 

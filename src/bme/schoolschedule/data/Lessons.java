@@ -22,7 +22,11 @@ public class Lessons {
     public Classes getClasses() {return classes;}
     public int getId() {return id;}
     public int getNumber() {return number;}
+<<<<<<< Updated upstream
     public Teachers getTeacher() { return teacherId; }
+=======
+    public int getTeacher() { return teacherId; }
+>>>>>>> Stashed changes
 
     public void setTime(int time) {this.time = time;}
     public int getTime() {return time;}

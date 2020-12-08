@@ -41,6 +41,13 @@ public class Timetable {
     //add lessons to timetable
     public void addLessons(int lessonId, Classes classes, String lessonName, int LessonNPW, int teacher){
         this.lessons.put(lessonId, new Lessons(lessonId, classes, lessonName, LessonNPW, teacher));
+<<<<<<< Updated upstream
+=======
+    }
+
+    public void addTimeslot(int timeslotId, String timeslot) {
+        this.timeslots.put(timeslotId, new Timeslot(timeslotId, timeslot));
+>>>>>>> Stashed changes
     }
 
     //get a class for add to a lesson
@@ -54,7 +61,10 @@ public class Timetable {
         return null;
     }
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     //get a teacher for add a lesson
     public int getTeacher(String name){
         for (Map.Entry<Integer, Teachers> entry : teachers.entrySet()) {

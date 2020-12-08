@@ -10,7 +10,11 @@
 9a	Tánc és Dráma	1	Kiss Jenő
 9a	Informatika	1	Varga Csilla
 9a_lányok	Testnevelés és sport	5	Molnár Bernadett
+<<<<<<< Updated upstream
 9a_fiúk	Testnevelés és sport	5	Molnár Bernadett
+=======
+9a_fiuk	Testnevelés és sport	5	Molnár Bernadett
+>>>>>>> Stashed changes
 9a	Osztályfőnöki	1	Kiss Jenő
 9a	II. idegen nyelv	3	Németh Emília
 10a	Magyar nyelv és irodalom	6	Kiss Jenő
@@ -25,7 +29,11 @@
 10a	Ének-zene	1	Horváth Edit
 10a	Informatika	1	Varga Csilla
 10a_lányok	Testnevelés és sport	5	Molnár Bernadett
+<<<<<<< Updated upstream
 10a_fiúk    Testnevelés és sport	5	Molnár Bernadett
+=======
+10a_fiuk	Testnevelés és sport	5	Molnár Bernadett
+>>>>>>> Stashed changes
 10a	Osztályfőnöki	1	Farkas Rozália
 11a	Magyar nyelv és irodalom	7	Kiss Jenő
 11a	Angol nyelv	3	Kovács Bence
@@ -39,7 +47,11 @@
 11a	Földrajz	2	Farkas Rozália
 11a	Művészetek	2	Horváth Edit
 11a_lányok	Testnevelés és sport	5	Molnár Ferenc
+<<<<<<< Updated upstream
 11a_fiúk    Testnevelés és sport	5	Molnár Ferenc
+=======
+11a_fiuk	Testnevelés és sport	5	Molnár Ferenc
+>>>>>>> Stashed changes
 11a	Osztályfőnöki	1	Nagy Katalin
 12a	Magyar nyelv és irodalom	8	Kiss Jenő
 12a	Angol nyelv	3	Kovács Bence
@@ -50,7 +62,11 @@
 12a	Művészetek	2	Horváth Edit	
 12a	Életvitel és gyakorlat	1	Farkas Rozália
 12a_lányok	Testnevelés és sport	5	Molnár Ferenc
+<<<<<<< Updated upstream
 12a_fiúk Testnevelés és sport	5	Molnár Ferenc
+=======
+12a_fiuk	Testnevelés és sport	5	Molnár Ferenc
+>>>>>>> Stashed changes
 12a	Osztályfőnöki	1	Tóth Anita
 9b	Magyar nyelv és irodalom	4	Kiss János
 9b	Matematika	5	Nagy Klára
@@ -64,7 +80,11 @@
 9b	Tánc és Dráma	1	Kiss János
 9b	Informatika	1	Varga Csilla
 9b_lányok	Testnevelés és sport	5	Molnár Bernadett
+<<<<<<< Updated upstream
 9b_fiúk  Testnevelés és sport	5	Molnár Bernadett
+=======
+9b_fiuk	Testnevelés és sport	5	Molnár Bernadett
+>>>>>>> Stashed changes
 9b	Osztályfőnöki	1	Kiss János
 9b	II. idegen nyelv	3	Németh Enikő
 10b	Magyar nyelv és irodalom	4	Kiss János
@@ -78,8 +98,13 @@
 10b	Földrajz	2	Farkas Rozália
 10b	Ének-zene	1	Horváth Edina
 10b	Informatika	1	Varga Csilla
+<<<<<<< Updated upstream
 10b_fiúk	Testnevelés és sport	5	Molnár Bernadett
 10b_lányok  Testnevelés és sport	5	Molnár Bernadett
+=======
+10b_fiuk	Testnevelés és sport	5	Molnár Bernadett
+10b_lányok	Testnevelés és sport	5	Molnár Bernadett
+>>>>>>> Stashed changes
 10b	Osztályfőnöki	1	Varga Csilla
 11b	Magyar nyelv és irodalom	4	Kiss János
 11b	Angol nyelv	3	Kovács Bálint
@@ -92,7 +117,11 @@
 11b	Kémia	2	Szabó Jakab
 11b	Földrajz	2	Farkas Rozália
 11b	Művészetek	2	Horváth Edina
+<<<<<<< Updated upstream
 11b_fiúk	Testnevelés és sport	5	Molnár Ferenc
+=======
+11b_fiuk	Testnevelés és sport	5	Molnár Ferenc
+>>>>>>> Stashed changes
 11b_lányok	Testnevelés és sport	5	Molnár Ferenc
 11b	Osztályfőnöki	1	Szabó Jakab
 12b	Magyar nyelv és irodalom	4	Kiss János
@@ -103,7 +132,11 @@
 12b	Biológia	2	Farkas Rozália
 12b	Művészetek	2	Horváth Edina
 12b	Életvitel és gyakorlat	1	Farkas Rozália
+<<<<<<< Updated upstream
 12b_fiúk	Testnevelés és sport	5	Molnár Ferenc
+=======
+12b_fiuk	Testnevelés és sport	5	Molnár Ferenc
+>>>>>>> Stashed changes
 12b_lányok	Testnevelés és sport	5	Molnár Ferenc
 12b	Osztályfőnöki	1	Tóth Anikó
 12b	Fizika	4	Szabó Jakab

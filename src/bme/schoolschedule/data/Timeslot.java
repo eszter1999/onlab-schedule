@@ -1,16 +1,18 @@
 package bme.schoolschedule.data;
 
 public class Timeslot {
-    private final int timeslotId;
+    private final int ID;
     private final String timeslot;
 
-    public Timeslot(int timeslotId, String timeslot) {
-        this.timeslotId = timeslotId;
+    public Timeslot(int timeslotId, String timeslot){
+        this.ID = timeslotId;
         this.timeslot = timeslot;
     }
 
-    public int getTimeslotId(){
-        return this.timeslotId;
+    /////*getters*/////
+
+    public int getID(){
+        return this.ID;
     }
 
     public String getTimeslot(){

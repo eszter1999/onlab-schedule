@@ -1,15 +1,16 @@
 package bme.schoolschedule;
 
 import bme.schoolschedule.data.*;
+import bme.schoolschedule.data.Class;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Timetable {
 
-    private final HashMap<Integer, Rooms> rooms;
-    private final HashMap<Integer, Classes> classes;
-    private final HashMap<Integer, Teachers> teachers;
+    private final HashMap<Integer, Room> rooms;
+    private final HashMap<Integer, Class> classes;
+    private final HashMap<Integer, Teacher> teachers;
     private final HashMap<Integer, Lessons> lessons;
     private final HashMap<Integer, Timeslot> timeslots;
 
@@ -26,22 +27,22 @@ public class Timetable {
 
     /////*adders*/////
     //add room to timetable
-    public void addRoom(int roomId, room type, String roomName, int capacity) {
-        this.rooms.put(roomId, new Rooms(roomId, type, roomName, capacity));
+    public void addRoom(int roomId, roomType type, String roomName, int capacity) {
+        this.rooms.put(roomId, new Room(roomId, type, roomName, capacity));
     }
 
     //add teacher to timetable
     public void addTeacher(int teacherId, String teacherName, int working_hour) {
-        this.teachers.put(teacherId, new Teachers(teacherId, teacherName, working_hour));
+        this.teachers.put(teacherId, new Teacher(teacherId, teacherName, working_hour));
     }
 
     //add class to timetable
     public void addClass(int classID, String className, int classCapacity){
-        this.classes.put(classID, new Classes(classID, className, classCapacity));
+        this.classes.put(classID, new Class(classID, className, classCapacity));
     }
 
     //add lessons to timetable
-    public void addLessons(int lessonId, Classes classes, String lessonName, int LessonNPW, int teacher){
+    public void addLessons(int lessonId, Class classes, String lessonName, int LessonNPW, int teacher){
         this.lessons.put(lessonId, new Lessons(lessonId, classes, lessonName, LessonNPW, teacher));
     }
 
@@ -52,9 +53,9 @@ public class Timetable {
 
     /////*getters*/////
     //get a class for add to a lesson
-    public Classes getClasses(String name){
-        for (Map.Entry<Integer, Classes> entry : classes.entrySet()) {
-            Classes value = entry.getValue();
+    public Class getClasses(String name){
+        for (Map.Entry<Integer, Class> entry : classes.entrySet()) {
+            Class value = entry.getValue();
             if (value.getName().equals(name)) {
                 return value;
             }
@@ -64,8 +65,8 @@ public class Timetable {
 
     //get a teacher for add a lesson
     public int getTeacher(String name){
-        for (Map.Entry<Integer, Teachers> entry : teachers.entrySet()) {
-            Teachers value = entry.getValue();
+        for (Map.Entry<Integer, Teacher> entry : teachers.entrySet()) {
+            Teacher value = entry.getValue();
             if (value.getName().equals(name)) {
                 return value.getId();
             }
@@ -77,15 +78,15 @@ public class Timetable {
     /////*print*/////
     //ezek csak a beolvasás teszteléséhez kellettek
     public void kiirasT(){
-        for (Map.Entry<Integer, Teachers> entry : teachers.entrySet()) {
-            Teachers value = entry.getValue();
+        for (Map.Entry<Integer, Teacher> entry : teachers.entrySet()) {
+            Teacher value = entry.getValue();
             System.out.println(value.getName() + "\t" + entry.getKey());
         }
     }
 
     public void kiirasC() {
-        for (Map.Entry<Integer, Classes> entry : classes.entrySet()) {
-            Classes value = entry.getValue();
+        for (Map.Entry<Integer, Class> entry : classes.entrySet()) {
+            Class value = entry.getValue();
             System.out.println(value.getName() + "\t" + entry.getKey());
         }
     }
@@ -98,8 +99,8 @@ public class Timetable {
     }
 
     public void kiirasR(){
-        for (Map.Entry<Integer, Rooms> entry : rooms.entrySet()) {
-            Rooms value = entry.getValue();
+        for (Map.Entry<Integer, Room> entry : rooms.entrySet()) {
+            Room value = entry.getValue();
             System.out.println(value.getType() + "\t" + entry.getKey());
         }
     }

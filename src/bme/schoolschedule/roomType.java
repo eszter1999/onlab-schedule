@@ -1,6 +1,6 @@
 package bme.schoolschedule;
 
-public enum room{
+public enum roomType{
     PE,
     BIO,
     CHEM,

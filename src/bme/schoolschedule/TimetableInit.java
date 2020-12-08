@@ -1,3 +1,4 @@
+/*
 package bme.schoolschedule;
 
 import java.io.BufferedReader;
@@ -47,14 +48,14 @@ public class TimetableInit {
                         timetable.addTeacher(num, line[0], Integer.parseInt(line[1]));
                         break;
                     case "lessons":
-                        System.out.println(line[0] + " " + line[1] + " " + line[2]);
+                        //System.out.println(line[0] + " " + line[1] + " " + line[2]);
                         timetable.addLessons(num, timetable.getClasses(line[0]), line[1], Integer.parseInt(line[2]), timetable.getTeacher(line[3]));
                         break;
                     case "timeslot":
                         timetable.addTimeslot(num, line[0]);
                         break;
                     default:
-                        timetable.addRoom(num, room.valueOf(line[0]), line[1], Integer.parseInt(line[2]));
+                        timetable.addRoom(num, roomType.valueOf(line[0]), line[1], Integer.parseInt(line[2]));
                         break;
                 }
 
@@ -67,3 +68,4 @@ public class TimetableInit {
         }
     }
 }
+*/

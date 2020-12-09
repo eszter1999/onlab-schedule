@@ -6,11 +6,13 @@ public class Room {
     private final int ID;
     private final String roomNumber;
     private final int capacity;
+    private final roomType type;
 
-    public Room(int roomId, String roomNumber, int capacity) {
+    public Room(int roomId, roomType rt, String roomNumber, int capacity) {
         this.ID = roomId;
         this.roomNumber = roomNumber;
         this.capacity = capacity;
+        this.type = rt;
     }
 
     /////*getters*////

@@ -9,9 +9,9 @@ import java.util.Map;
 public class Timetable {
 
     private final HashMap<Integer, Room> rooms;
-    private final HashMap<Integer, Class> classes;
+    ///////////private final HashMap<Integer, Class> classes;
     private final HashMap<Integer, Teacher> teachers;
-    private final HashMap<Integer, Lessons> lessons;
+    //////////////private final HashMap<Integer, Lesson> lessons;
     private final HashMap<Integer, Timeslot> timeslots;
 
     public Timetable() {
@@ -68,7 +68,7 @@ public class Timetable {
         for (Map.Entry<Integer, Teacher> entry : teachers.entrySet()) {
             Teacher value = entry.getValue();
             if (value.getName().equals(name)) {
-                return value.getId();
+                return value.getID();
             }
         }
         return 0;

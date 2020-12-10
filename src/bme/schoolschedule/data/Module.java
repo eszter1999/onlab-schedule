@@ -2,7 +2,7 @@ package bme.schoolschedule.data;
 
 public class Module {
     private final int ID;
-    private final String code;
+    //private final String code;
     private final String name;
     private final int teacherIDs[];
 

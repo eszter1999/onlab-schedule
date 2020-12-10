@@ -81,13 +81,6 @@ public class Main {
         return timetable;
     }
 
-    /*private void initTimetable() {
-        inputReader("teachers");
-        inputReader("lessons");
-        inputReader("groups");
-        inputReader("rooms");
-        inputReader("timeslot");
-    }*/
 
     private static void inputReader(String type, Timetable timetable) {
         try {
@@ -118,9 +111,11 @@ public class Main {
                         timetable.addTimeslot(num, line[0]);
                         num++;
                         break;
-                    default:
+                    case "rooms":
                         timetable.addRoom(num, room.valueOf(line[0]), line[1], Integer.parseInt(line[2]));
                         num++;
+                        break;
+                    default:
                         break;
                 }
 

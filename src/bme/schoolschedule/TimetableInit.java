@@ -1,4 +1,4 @@
-/*
+
 package bme.schoolschedule;
 
 import java.io.BufferedReader;
@@ -68,4 +68,4 @@ public class TimetableInit {
         }
     }
 }
-*/
+

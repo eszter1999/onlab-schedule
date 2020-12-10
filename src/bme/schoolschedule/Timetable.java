@@ -2,27 +2,88 @@ package bme.schoolschedule;
 
 import bme.schoolschedule.data.*;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class Timetable {
+
+    private Random randomGenerator;
 
     private final HashMap<Integer, Rooms> rooms;
     private final HashMap<Integer, Group> groups;
     private final HashMap<Integer, Teachers> teachers;
     private final HashMap<Integer, Lessons> lessons;
     private final HashMap<Integer, Timeslot> timeslots;
+    private Class classes[];
+
+    private ArrayList<Integer> pe;
+    private ArrayList<Integer> it;
+    private ArrayList<Integer> normal;
+    private ArrayList<Integer> bio;
+    private ArrayList<Integer> phy;
+    private ArrayList<Integer> chem;
 
     private int numClasses = 0;
 
     public Timetable() {
+        randomGenerator = new Random();
         this.rooms = new HashMap<>();
         this.groups = new HashMap<>();
         this.teachers = new HashMap<>();
         this.lessons = new HashMap<>();
         this.timeslots = new HashMap<>();
+        this.pe = new ArrayList<>();
+        this.it = new ArrayList<>();
+        this.normal = new ArrayList<>();
+        this.bio = new ArrayList<>();
+        this.phy = new ArrayList<>();
+        this.chem = new ArrayList<>();
+    }
+
+    public Timetable(Timetable cloneable) {
+        randomGenerator = new Random();
+        this.rooms = cloneable.getRooms();
+        this.teachers = cloneable.getTeachers();
+        this.lessons = cloneable.getLessons();
+        this.groups = cloneable.getGroups();
+        this.timeslots = cloneable.getTimeslots();
+        this.pe = cloneable.getRooms(room.PE);
+        this.it = cloneable.getRooms(room.IT);
+        this.normal = cloneable.getRooms(room.NORMAL);
+        this.bio = cloneable.getRooms(room.BIO);
+        this.phy = cloneable.getRooms(room.PHY);
+        this.chem = cloneable.getRooms(room.CHEM);
+    }
+
+    private HashMap<Integer, Group> getGroups() {
+        return this.groups;
+    }
+
+    private HashMap<Integer, Rooms> getRooms() {
+        return this.rooms;
+    }
+
+    private HashMap<Integer, Timeslot> getTimeslots() {
+        return this.timeslots;
+    }
+
+    private HashMap<Integer, Lessons> getLessons() {
+        return this.lessons;
+    }
+
+    private HashMap<Integer, Teachers> getTeachers() {
+        return this.teachers;
+    }
+
+    public void assortRooms(){
+        this.pe = getRooms(room.PE);
+        this.it = getRooms(room.IT);
+        this.normal = getRooms(room.NORMAL);
+        this.bio = getRooms(room.BIO);
+        this.phy = getRooms(room.PHY);
+        this.chem = getRooms(room.CHEM);
     }
 
     //add room to timetable
@@ -50,7 +111,7 @@ public class Timetable {
         this.timeslots.put(timeslotId, new Timeslot(timeslotId, timeslot));
     }
 
-    //get a class for add to a lesson
+    //get lessons for a group
     public int[] getLessons(String name){
         ArrayList<Integer> lesson = new ArrayList<>();
         for (Map.Entry<Integer, Lessons> entry : lessons.entrySet()) {
@@ -65,6 +126,26 @@ public class Timetable {
         return l;
     }
 
+    //get a teacher for add a lesson
+    public int getTeacher(String name){
+        for (Map.Entry<Integer, Teachers> entry : teachers.entrySet()) {
+            Teachers value = entry.getValue();
+            if (value.getName().equals(name)) {
+                return entry.getKey();
+            }
+        }
+        return 0;
+    }
+
+    public Teachers getTeacher(int teacherId) {
+        return this.teachers.get(teacherId);
+    }
+
+    public Timeslot getTimeslot(int timeslotId) {
+        return this.timeslots.get(timeslotId);
+    }
+
+
     //get a group
     public Group getGroup(String name){
         for (Map.Entry<Integer, Group> entry : groups.entrySet()) {
@@ -76,8 +157,45 @@ public class Timetable {
         return null;
     }
 
-    public Group[] getGroupsAsArray() {
-        return this.groups.values().toArray(new Group[this.groups.size()]);
+    public Class[] getClasses() {
+        return this.classes;
+    }
+
+    public Group getGroup(int groupId) {
+        return this.groups.get(groupId);
+    }
+
+
+    public Lessons getLesson(int lessonid){
+        for (Map.Entry<Integer, Lessons> entry : lessons.entrySet()) {
+            Lessons value = entry.getValue();
+            if(value.getId() == lessonid)
+                return value ; //value.getType()
+        }
+        return null;
+    }
+
+    //get a room
+    public Rooms getRoom(int id){
+        for (Map.Entry<Integer, Rooms> entry : rooms.entrySet()) {
+            Rooms value = entry.getValue();
+            if (value.getId() == id){
+                return value;
+            }
+        }
+        return null;
+    }
+
+    //get rooms of a specified type
+    public ArrayList<Integer> getRooms(room room) {
+        ArrayList<Integer> r = new ArrayList<>();
+        for (Map.Entry<Integer, Rooms> entry : rooms.entrySet()) {
+            Rooms value = entry.getValue();
+            if (value.getType().equals(room.toString())) {
+                r.add(value.getId());
+            }
+        }
+        return r;
     }
 
     public Timeslot getRandomTimeslot() {
@@ -86,30 +204,32 @@ public class Timetable {
         return timeslot;
     }
 
-    public int getLessonRoomType(int lessonid){
-        for (Map.Entry<Integer, Lessons> entry : lessons.entrySet()) {
-            Lessons value = entry.getValue();
-            if(value.getId() == lessonid)
-                return 1 ; //value.getType()
-        }
-        return 1;
+    public Group[] getGroupsAsArray() {
+        return this.groups.values().toArray(new Group[0]);
     }
 
-    public Rooms getRandomRoom() {
-        Object[] roomsArray = this.rooms.values().toArray();
-        Rooms room = (Rooms) roomsArray[(int) (roomsArray.length * Math.random())];
-        return room;
-    }
-
-    //get a teacher for add a lesson
-    public int getTeacher(String name){
-        for (Map.Entry<Integer, Teachers> entry : teachers.entrySet()) {
-            Teachers value = entry.getValue();
-            if (value.getName().equals(name)) {
-                return entry.getKey();
-            }
+    public Rooms getRandomRoom(String type) {
+        switch (type) {
+            case "IT":
+                Rooms room = getRoom(this.it.get((int) (this.it.size() * Math.random())));
+                return room;
+            case "NORMAL":
+                return getRoom(this.normal.get((int) (this.it.size() * Math.random())));
+            case "PHY":
+                room = getRoom(this.phy.get((int) (this.it.size() * Math.random())));
+                return room;
+            case "BIO":
+                room = getRoom(this.bio.get((int) (this.it.size() * Math.random())));
+                return room;
+            case "PE":
+                room = getRoom(this.pe.get((int) (this.it.size() * Math.random())));
+                return room;
+            case "CHEM":
+                room = getRoom(this.chem.get((int) (this.it.size() * Math.random())));
+                return room;
+            default:
+                return null;
         }
-        return 0;
     }
 
     public int getNumClasses() {
@@ -125,6 +245,73 @@ public class Timetable {
         this.numClasses = numClasses;
 
         return this.numClasses;
+    }
+
+    public void createClasses(Individual individual) {
+        // Init classes
+        Class classes[] = new Class[this.getNumClasses()];
+
+        // Get individual's chromosome
+        int chromosome[] = individual.getChromosome();
+        int chromosomePos = 0;
+        int classIndex = 0;
+
+        for (Group group : this.getGroupsAsArray()) {
+            int lessonsIds[] = group.getLessonsIds();
+            for (int lessonId : lessonsIds) {
+                classes[classIndex] = new Class(classIndex, group.getId(), lessonId);
+
+                // Add timeslot
+                classes[classIndex].addTimeslot(chromosome[chromosomePos]);
+                chromosomePos++;
+
+                // Add room
+                classes[classIndex].setRoomId(chromosome[chromosomePos]);
+                chromosomePos++;
+
+                // Add professor
+                classes[classIndex].addTeacher(chromosome[chromosomePos]);
+                chromosomePos++;
+
+                classIndex++;
+            }
+        }
+
+        this.classes = classes;
+    }
+
+    public int calcClashes() {
+        int clashes = 0;
+
+        for (Class classA : this.classes) {
+            // Check room capacity
+            int roomCapacity = this.getRoom(classA.getRoomId()).getCapacity();
+            int groupSize = this.getGroup(classA.getGroupId()).getSize();
+
+            if (roomCapacity < groupSize) {
+                clashes++;
+            }
+
+            // Check if room is taken
+            for (Class classB : this.classes) {
+                if (classA.getRoomId() == classB.getRoomId() && classA.getTimeslotId() == classB.getTimeslotId()
+                        && classA.getClassId() != classB.getClassId()) {
+                    clashes++;
+                    break;
+                }
+            }
+
+            // Check if professor is available
+            for (Class classB : this.classes) {
+                if (classA.getTeacherId() == classB.getTeacherId() && classA.getTimeslotId() == classB.getTimeslotId()
+                        && classA.getClassId() != classB.getClassId()) {
+                    clashes++;
+                    break;
+                }
+            }
+        }
+
+        return clashes;
     }
 
     //ezek csak a beolvasás teszteléséhez kellettek

@@ -16,7 +16,7 @@ public class TimetableInit {
 
         /*timetable.kiirasC();
         timetable.kiirasL();
-        timetable.kiirasR();
+        /*timetable.kiirasR();
         timetable.kiirasT();
         timetable.kiirasTS();*/
     }
@@ -38,24 +38,30 @@ public class TimetableInit {
             BufferedReader reader = new BufferedReader(new InputStreamReader(in));
             String currentLine = reader.readLine();
             while (currentLine != null) {
-                num++;
                 String[] line = currentLine.split("\t");
                 //megnézi hogy miket olvasunk be
                 switch (type) {
                     case "groups":
                         timetable.addGroup(num, line[0], Integer.parseInt(line[1]), timetable.getLessons(line[0]));
+                        num++;
                         break;
                     case "teachers":
                         timetable.addTeacher(num, line[0], Integer.parseInt(line[1]));
+                        num++;
                         break;
                     case "lessons":
-                        timetable.addLessons(num, line[0], line[1], Integer.parseInt(line[2]), timetable.getTeacher(line[3]), room.valueOf(line[4]));
+                        for(int i = 0; i < Integer.parseInt(line[2]); i++) {
+                            timetable.addLessons(num, line[0], line[1], Integer.parseInt(line[2]), timetable.getTeacher(line[3]), room.valueOf(line[4]));
+                            num++;
+                        }
                         break;
                     case "timeslot":
                         timetable.addTimeslot(num, line[0]);
+                        num++;
                         break;
                     default:
                         timetable.addRoom(num, room.valueOf(line[0]), line[1], Integer.parseInt(line[2]));
+                        num++;
                         break;
                 }
 

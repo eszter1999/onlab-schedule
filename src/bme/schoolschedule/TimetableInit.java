@@ -14,11 +14,11 @@ public class TimetableInit {
         timetable = tt;
         initTimetable();
 
-        /*timetable.kiirasC();
+        timetable.kiirasC();
         timetable.kiirasL();
         /*timetable.kiirasR();
         timetable.kiirasT();
-        timetable.kiirasTS();*/
+        timetable.kiirasTS();
     }
 
     //add teachers, classes, rooms and lessons to the timetable

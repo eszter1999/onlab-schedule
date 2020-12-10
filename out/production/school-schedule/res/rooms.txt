@@ -3,6 +3,7 @@ PE	Kondi	36
 PE	Focipálya	36
 PE	Röpipálya	36
 CHEM	Kémialabor	36
+PHY	Fizikalabor	36
 BIO	Bioszlabor	36
 IT	Informatika terem	36
 NORMAL	101	36

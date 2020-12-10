@@ -726,7 +726,7 @@
 											"top": 470,
 											"width": 206,
 											"height": 13,
-											"text": "-classes: Classes",
+											"text": "-group: Classes",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1754,7 +1754,7 @@
 										"$ref": "AAAAAAF18lstgos/QHc="
 									},
 									"edgePosition": 1,
-									"text": "-classes"
+									"text": "-group"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -2791,7 +2791,7 @@
 											"top": 821,
 											"width": 579.134765625,
 											"height": 13,
-											"text": "-classes",
+											"text": "-group",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2910,7 +2910,7 @@
 											"top": 919,
 											"width": 579.134765625,
 											"height": 13,
-											"text": "+addLessons(int lessonId, Classes classes, String lessonName, int LessonNPW, Teachers teachers)",
+											"text": "+addLessons(int lessonId, Classes group, String lessonName, int LessonNPW, Teachers teachers)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3020,7 +3020,7 @@
 							"top": 776,
 							"width": 353,
 							"height": 85,
-							"text": "Timetable note\nprivate final HashMap<Integer, Rooms> rooms;\nprivate final HashMap<Integer, Classes> classes;\nprivate final HashMap<Integer, Teachers> teachers;\nprivate final HashMap<Integer, Lessons> lessons;"
+							"text": "Timetable note\nprivate final HashMap<Integer, Rooms> rooms;\nprivate final HashMap<Integer, Classes> group;\nprivate final HashMap<Integer, Teachers> teachers;\nprivate final HashMap<Integer, Lessons> lessons;"
 						},
 						{
 							"_type": "UMLObjectView",
@@ -3448,7 +3448,7 @@
 										"$ref": "AAAAAAF19Q7cbPbZRsY="
 									},
 									"edgePosition": 1,
-									"text": "-classes"
+									"text": "-group"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -4907,7 +4907,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF18k6jooW4et8="
 									},
-									"name": "classes",
+									"name": "group",
 									"end1": {
 										"_type": "UMLAssociationEnd",
 										"_id": "AAAAAAF18lstgos8vBo=",
@@ -4939,7 +4939,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF18k6jooW4et8="
 									},
-									"name": "classes",
+									"name": "group",
 									"end1": {
 										"_type": "UMLAssociationEnd",
 										"_id": "AAAAAAF18mIdoptSZyw=",
@@ -4970,7 +4970,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF18k6jooW4et8="
 									},
-									"name": "classes",
+									"name": "group",
 									"end1": {
 										"_type": "UMLAssociationEnd",
 										"_id": "AAAAAAF19Q7cbPbWf+4=",
@@ -5118,7 +5118,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF18lPdj4ax09Q="
 									},
-									"name": "classes",
+									"name": "group",
 									"visibility": "private",
 									"type": {
 										"$ref": "AAAAAAF18k6jooW4et8="
@@ -5548,7 +5548,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF18lzkZo/suyQ="
 							},
-							"name": "classes",
+							"name": "group",
 							"visibility": "private",
 							"type": "ArrayList<Classes>"
 						},
@@ -5749,7 +5749,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF19QN+1dUOizU="
 							},
-							"name": "classes",
+							"name": "group",
 							"visibility": "private"
 						},
 						{
@@ -5905,7 +5905,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF19QzeRupJFDI="
 									},
-									"name": "Classes classes",
+									"name": "Classes group",
 									"type": ""
 								},
 								{

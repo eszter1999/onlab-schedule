@@ -1,4 +1,3 @@
-/*
 package bme.schoolschedule;
 
 import java.io.BufferedReader;
@@ -15,18 +14,20 @@ public class TimetableInit {
         timetable = tt;
         initTimetable();
 
-        timetable.kiirasC();
+        /*timetable.kiirasC();
         timetable.kiirasL();
-        timetable.kiirasR();
+        /*timetable.kiirasR();
         timetable.kiirasT();
+        timetable.kiirasTS();*/
     }
 
     //add teachers, classes, rooms and lessons to the timetable
     private void initTimetable(){
         inputReader("teachers");
-        inputReader("classes");
         inputReader("lessons");
+        inputReader("groups");
         inputReader("rooms");
+        inputReader("timeslot");
     }
 
     private void inputReader(String type) {
@@ -37,25 +38,30 @@ public class TimetableInit {
             BufferedReader reader = new BufferedReader(new InputStreamReader(in));
             String currentLine = reader.readLine();
             while (currentLine != null) {
-                num++;
                 String[] line = currentLine.split("\t");
                 //megnézi hogy miket olvasunk be
                 switch (type) {
-                    case "classes":
-                        timetable.addClass(num, line[0], Integer.parseInt(line[1]));
+                    case "groups":
+                        timetable.addGroup(num, line[0], Integer.parseInt(line[1]), timetable.getLessons(line[0]));
+                        num++;
                         break;
                     case "teachers":
                         timetable.addTeacher(num, line[0], Integer.parseInt(line[1]));
+                        num++;
                         break;
                     case "lessons":
-                        //System.out.println(line[0] + " " + line[1] + " " + line[2]);
-                        timetable.addLessons(num, timetable.getClasses(line[0]), line[1], Integer.parseInt(line[2]), timetable.getTeacher(line[3]));
+                        for(int i = 0; i < Integer.parseInt(line[2]); i++) {
+                            timetable.addLessons(num, line[0], line[1], Integer.parseInt(line[2]), timetable.getTeacher(line[3]), room.valueOf(line[4]));
+                            num++;
+                        }
                         break;
                     case "timeslot":
                         timetable.addTimeslot(num, line[0]);
+                        num++;
                         break;
                     default:
-                        timetable.addRoom(num, roomType.valueOf(line[0]), line[1], Integer.parseInt(line[2]));
+                        timetable.addRoom(num, room.valueOf(line[0]), line[1], Integer.parseInt(line[2]));
+                        num++;
                         break;
                 }
 
@@ -68,4 +74,3 @@ public class TimetableInit {
         }
     }
 }
-*/

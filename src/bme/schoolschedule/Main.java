@@ -1,15 +1,21 @@
 package bme.schoolschedule;
 
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import bme.schoolschedule.data.Group;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.*;
+import java.sql.Time;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Timetable timetable = initializeTimetable();
+        String[] columns = {"Group", "Lesson", "Teacher", "Room", "Time"};
 
         GeneticAlgorithm ga = new GeneticAlgorithm(100, 0.01, 0.9, 2, 5);
 
@@ -23,7 +29,7 @@ public class Main {
         int generation = 1;
 
         // Start evolution loop
-        while (!ga.isTerminationConditionMet(generation, 200)
+        while (!ga.isTerminationConditionMet(generation, 500)
                 && !ga.isTerminationConditionMet(population)) {
             // Print fitness
             System.out.println("G" + generation + " Best fitness: " + population.getFittest(0).getFitness());
@@ -50,23 +56,8 @@ public class Main {
 
         // Print classes
         System.out.println();
-        Class classes[] = timetable.getClasses();
-        int classIndex = 1;
-        for (Class bestClass : classes) {
-            System.out.println("Class " + classIndex + ":");
-            System.out.println("Lesson: " +
-                    timetable.getLesson(bestClass.getLessonId()).getName());
-            System.out.println("Group: " +
-                    timetable.getGroup(bestClass.getGroupId()).getName());
-            System.out.println("Room: " +
-                    timetable.getRoom(bestClass.getRoomId()).getName());
-            System.out.println("Teacher: " +
-                    timetable.getTeacher(bestClass.getTeacherId()).getName());
-            System.out.println("Time: " +
-                    timetable.getTimeslot(bestClass.getTimeslotId()).getTimeslot());
-            System.out.println("-----");
-            classIndex++;
-        }
+        Class[] classes = timetable.getClasses();
+        new ExcelExport(timetable);
     }
 
     private static Timetable initializeTimetable() {
@@ -126,6 +117,15 @@ public class Main {
                 IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private static ArrayList getClasses(Timetable timetable, String group){
+        ArrayList<Class> classes =  new ArrayList<>();
+        for (Class cl : classes) {
+            if(timetable.getGroup(cl.getGroupId()).getName().equals(group))
+                classes.add(cl);
+        }
+        return classes;
     }
 }
 

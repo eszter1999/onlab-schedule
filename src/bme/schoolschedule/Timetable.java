@@ -145,18 +145,6 @@ public class Timetable {
         return this.timeslots.get(timeslotId);
     }
 
-
-    //get a group
-    public Group getGroup(String name){
-        for (Map.Entry<Integer, Group> entry : groups.entrySet()) {
-            Group value = entry.getValue();
-            if (value.getName().equals(name)) {
-                return value;
-            }
-        }
-        return null;
-    }
-
     public Class[] getClasses() {
         return this.classes;
     }
@@ -200,33 +188,43 @@ public class Timetable {
 
     public Timeslot getRandomTimeslot() {
         Object[] timeslotArray = this.timeslots.values().toArray();
-        Timeslot timeslot = (Timeslot) timeslotArray[(int) (timeslotArray.length * Math.random())];
-        return timeslot;
+        int low = 0;
+        int high = timeslots.size()-1;
+
+        //Timeslot timeslot = (Timeslot) timeslotArray[(int) (timeslotArray.length * Math.random())];
+        return timeslots.get(getRandomNumber(low,high));
     }
 
     public Group[] getGroupsAsArray() {
         return this.groups.values().toArray(new Group[0]);
     }
 
+    public int getRandomNumber(int min, int max) {
+        return (int) ((Math.random() * (max - min)) + min);
+    }
+
     public Rooms getRandomRoom(String type) {
+        int low = 0;
+        int high;
         switch (type) {
             case "IT":
-                Rooms room = getRoom(this.it.get((int) (this.it.size() * Math.random())));
-                return room;
+                high = this.it.size()-1;
+                return getRoom(this.it.get(getRandomNumber(low, high)));
             case "NORMAL":
-                return getRoom(this.normal.get((int) (this.it.size() * Math.random())));
+                high = this.normal.size()-1;
+                return getRoom(this.normal.get(getRandomNumber(low, high)));
             case "PHY":
-                room = getRoom(this.phy.get((int) (this.it.size() * Math.random())));
-                return room;
+                high = this.phy.size()-1;
+                return getRoom(this.phy.get(getRandomNumber(low, high)));
             case "BIO":
-                room = getRoom(this.bio.get((int) (this.it.size() * Math.random())));
-                return room;
+                high = this.bio.size()-1;
+                return getRoom(this.bio.get(getRandomNumber(low, high)));
             case "PE":
-                room = getRoom(this.pe.get((int) (this.it.size() * Math.random())));
-                return room;
+                high = this.pe.size()-1;
+                return getRoom(this.pe.get(getRandomNumber(low, high)));
             case "CHEM":
-                room = getRoom(this.chem.get((int) (this.it.size() * Math.random())));
-                return room;
+                high = this.chem.size()-1;
+                return getRoom(this.chem.get(getRandomNumber(low, high)));
             default:
                 return null;
         }
@@ -251,7 +249,6 @@ public class Timetable {
         // Init classes
         Class classes[] = new Class[this.getNumClasses()];
 
-        // Get individual's chromosome
         int chromosome[] = individual.getChromosome();
         int chromosomePos = 0;
         int classIndex = 0;

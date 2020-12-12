@@ -187,7 +187,6 @@ public class Timetable {
     }
 
     public Timeslot getRandomTimeslot() {
-        Object[] timeslotArray = this.timeslots.values().toArray();
         int low = 0;
         int high = timeslots.size()-1;
 

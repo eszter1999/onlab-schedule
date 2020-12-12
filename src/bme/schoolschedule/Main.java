@@ -15,7 +15,6 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         Timetable timetable = initializeTimetable();
-        String[] columns = {"Group", "Lesson", "Teacher", "Room", "Time"};
 
         GeneticAlgorithm ga = new GeneticAlgorithm(100, 0.01, 0.9, 2, 5);
 
@@ -56,7 +55,7 @@ public class Main {
 
         // Print classes
         System.out.println();
-        Class[] classes = timetable.getClasses();
+        //export to excel
         new ExcelExport(timetable);
     }
 

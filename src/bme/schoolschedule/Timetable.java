@@ -201,6 +201,20 @@ public class Timetable {
         return (int) ((Math.random() * (max - min)) + min);
     }
 
+    public int[] printTeachers(){
+        int[] t = new int[teachers.size()];
+        for (Map.Entry<Integer, Teachers> entry : teachers.entrySet()) {
+            Teachers value = entry.getValue();
+            t[value.getId()] = 0;
+            for(Map.Entry<Integer, Lessons> less: lessons.entrySet()) {
+                Lessons lesson = less.getValue();
+                if(lesson.getTeacher() == value.getId())
+                    t[value.getId()]++;
+            }
+        }
+        return t;
+    }
+
     public Rooms getRandomRoom(String type) {
         int low = 0;
         int high;
@@ -275,8 +289,11 @@ public class Timetable {
         this.classes = classes;
     }
 
-    public int calcClashes() {
+    public int[] calcClashes() {
         int clashes = 0;
+        int teacher = 0;
+        int group = 0;
+        int room = 0;
 
         for (Class classA : this.classes) {
             // Check room capacity
@@ -285,6 +302,7 @@ public class Timetable {
 
             if (roomCapacity < groupSize) {
                 clashes++;
+                room++;
             }
 
             // Check if room is taken
@@ -292,6 +310,7 @@ public class Timetable {
                 if (classA.getRoomId() == classB.getRoomId() && classA.getTimeslotId() == classB.getTimeslotId()
                         && classA.getClassId() != classB.getClassId()) {
                     clashes++;
+                    room++;
                     break;
                 }
             }
@@ -301,6 +320,7 @@ public class Timetable {
                 if (classA.getTeacherId() == classB.getTeacherId() && classA.getTimeslotId() == classB.getTimeslotId()
                         && classA.getClassId() != classB.getClassId()) {
                     clashes++;
+                    teacher++;
                     break;
                 }
             }
@@ -310,12 +330,18 @@ public class Timetable {
                 if (classA.getGroupId() == classB.getGroupId() && classA.getTimeslotId() == classB.getTimeslotId()
                         && classA.getClassId() != classB.getClassId()) {
                     clashes++;
+                    group++;
                     break;
                 }
             }
         }
 
-        return clashes;
+        int[] cl = new int[4];
+        cl[0] = clashes;
+        cl[1] = room ;
+        cl[2] = teacher;
+        cl[3] = group;
+        return cl;
     }
 
     //ezek csak a beolvasás teszteléséhez kellettek

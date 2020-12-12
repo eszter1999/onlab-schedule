@@ -16,28 +16,11 @@ public class Individual {
         int[] newChromosome = new int[chromosomeLength];
         int chromosomeIndex = 0;
         for (Group group : timetable.getGroupsAsArray()) {
-            // Loop through modules
-            ArrayList<Integer> timeslots = new ArrayList<>();
+            // Loop through module
             for (int LessonId : group.getLessonsIds()) {
+
                 // Add random time
-                /*Boolean check = true;
-                int random = 0;
-                int id = 0;
-
-                while (check) {
-                    check = false;
-                    random = timetable.getTimeslot(id).getTimeslotId();
-                    for (int str : timeslots) {
-                        if (random == str) {
-                            check = true;
-                            break;
-                        }
-                    }
-                    id++;
-                }*/
-
                 int timeslotId = timetable.getRandomTimeslot().getTimeslotId();
-                timeslots.add(timeslotId);
                 newChromosome[chromosomeIndex] = timeslotId;
                 chromosomeIndex++;
 

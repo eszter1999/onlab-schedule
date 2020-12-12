@@ -2,6 +2,7 @@ package bme.schoolschedule;
 
 
 import bme.schoolschedule.data.Group;
+import bme.schoolschedule.data.Teachers;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -16,7 +17,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         Timetable timetable = initializeTimetable();
 
-        GeneticAlgorithm ga = new GeneticAlgorithm(100, 0.01, 0.9, 2, 5);
+        GeneticAlgorithm ga = new GeneticAlgorithm(101, 0.001, 0.9, 2, 5);
 
         // Initialize population
         Population population = ga.initPopulation(timetable);
@@ -28,7 +29,7 @@ public class Main {
         int generation = 1;
 
         // Start evolution loop
-        while (!ga.isTerminationConditionMet(generation, 500)
+        while (!ga.isTerminationConditionMet(generation, 1000)
                 && !ga.isTerminationConditionMet(population)) {
             // Print fitness
             System.out.println("G" + generation + " Best fitness: " + population.getFittest(0).getFitness());
@@ -51,7 +52,14 @@ public class Main {
         System.out.println();
         System.out.println("Solution found in " + generation + " generations");
         System.out.println("Final solution fitness: " + population.getFittest(0).getFitness());
-        System.out.println("Clashes: " + timetable.calcClashes());
+        System.out.println("Clashes: " + timetable.calcClashes()[0]);
+        System.out.println("RoomClashes: " + timetable.calcClashes()[1]);
+        System.out.println("TeacherClashes: " + timetable.calcClashes()[2]);
+        System.out.println("GroupClashes: " + timetable.calcClashes()[3]);
+
+        //int[] teachers = timetable.printTeachers();
+        //for(int i = 0; i < teachers.length; i++)
+        //    System.out.println("teacher id: " + i + " working hour: " + teachers[i]);
 
         // Print classes
         System.out.println();

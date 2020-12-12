@@ -3,6 +3,8 @@ package bme.schoolschedule;
 import bme.schoolschedule.data.Group;
 import bme.schoolschedule.data.Lessons;
 
+import java.util.ArrayList;
+
 public class Individual {
     private int[] chromosome;
     private double fitness = -1;
@@ -11,13 +13,31 @@ public class Individual {
         int numClasses = timetable.getNumClasses();
 
         int chromosomeLength = numClasses * 3;
-        int newChromosome[] = new int[chromosomeLength];
+        int[] newChromosome = new int[chromosomeLength];
         int chromosomeIndex = 0;
         for (Group group : timetable.getGroupsAsArray()) {
             // Loop through modules
+            ArrayList<Integer> timeslots = new ArrayList<>();
             for (int LessonId : group.getLessonsIds()) {
                 // Add random time
+                /*Boolean check = true;
+                int random = 0;
+                int id = 0;
+
+                while (check) {
+                    check = false;
+                    random = timetable.getTimeslot(id).getTimeslotId();
+                    for (int str : timeslots) {
+                        if (random == str) {
+                            check = true;
+                            break;
+                        }
+                    }
+                    id++;
+                }*/
+
                 int timeslotId = timetable.getRandomTimeslot().getTimeslotId();
+                timeslots.add(timeslotId);
                 newChromosome[chromosomeIndex] = timeslotId;
                 chromosomeIndex++;
 

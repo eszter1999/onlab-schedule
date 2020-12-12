@@ -12,7 +12,7 @@
 9a	Testnevelés és sport	5	Molnár Bernadett	PE
 9a	Osztályfőnöki	1	Kiss Jenő	NORMAL
 9a	II. idegen nyelv	3	Németh Emília	NORMAL
-10a	Magyar nyelv és irodalom	6	Kiss Jenő	NORMAL
+10a	Magyar nyelv és irodalom	6	Kiss József	NORMAL
 10a	Angol nyelv	3	Kovács Bence	NORMAL
 10a	II. idegen nyelv	3	Németh Emília	NORMAL
 10a	Matematika	3	Nagy Katalin	NORMAL
@@ -25,7 +25,7 @@
 10a	Informatika	1	Varga Csilla	IT
 10a	Testnevelés és sport	5	Molnár Ferenc	PE
 10a	Osztályfőnöki	1	Farkas Rozália	NORMAL
-11a	Magyar nyelv és irodalom	7	Kiss Jenő	NORMAL
+11a	Magyar nyelv és irodalom	7	Kiss József	NORMAL
 11a	Angol nyelv	3	Kovács Bence	NORMAL
 11a	II. idegen nyelv	3	Németh Emilia	NORMAL
 11a	Matematika	3	Nagy Katalin	NORMAL
@@ -38,7 +38,7 @@
 11a	Művészetek	2	Horváth Edit	NORMAL
 11a	Testnevelés és sport	5	Molnár Bernadett	PE
 11a	Osztályfőnöki	1	Nagy Katalin	NORMAL
-12a	Magyar nyelv és irodalom	8	Kiss Jenő	NORMAL
+12a	Magyar nyelv és irodalom	8	Kiss Jónás	NORMAL
 12a	Angol nyelv	3	Kovács Bence	NORMAL
 12a	II. idegen nyelv	3	Németh Emília	NORMAL
 12a	Matematika	3	Nagy Katalin	NORMAL
@@ -62,7 +62,7 @@
 9b	Testnevelés és sport	5	Molnár Bernadett	PE
 9b	Osztályfőnöki	1	Kiss János	NORMAL
 9b	II. idegen nyelv	3	Németh Enikő	NORMAL
-10b	Magyar nyelv és irodalom	4	Kiss János	NORMAL
+10b	Magyar nyelv és irodalom	4	Kiss Jónás	NORMAL
 10b	Angol nyelv	3	Kovács Bálint	NORMAL
 10b	II. idegen nyelv	3	Németh Enikő	NORMAL
 10b	Matematika	5	Nagy Klára	NORMAL

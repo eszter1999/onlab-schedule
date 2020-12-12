@@ -189,10 +189,9 @@ public class Timetable {
     public Timeslot getRandomTimeslot() {
         int low = 0;
         int high = timeslots.size()-1;
-
-        //Timeslot timeslot = (Timeslot) timeslotArray[(int) (timeslotArray.length * Math.random())];
         return timeslots.get(getRandomNumber(low,high));
     }
+
 
     public Group[] getGroupsAsArray() {
         return this.groups.values().toArray(new Group[0]);
@@ -246,14 +245,14 @@ public class Timetable {
 
     public void createClasses(Individual individual) {
         // Init classes
-        Class classes[] = new Class[this.getNumClasses()];
+        Class[] classes = new Class[this.getNumClasses()];
 
-        int chromosome[] = individual.getChromosome();
+        int[] chromosome = individual.getChromosome();
         int chromosomePos = 0;
         int classIndex = 0;
 
         for (Group group : this.getGroupsAsArray()) {
-            int lessonsIds[] = group.getLessonsIds();
+            int[] lessonsIds = group.getLessonsIds();
             for (int lessonId : lessonsIds) {
                 classes[classIndex] = new Class(classIndex, group.getId(), lessonId);
 
@@ -300,6 +299,15 @@ public class Timetable {
             // Check if professor is available
             for (Class classB : this.classes) {
                 if (classA.getTeacherId() == classB.getTeacherId() && classA.getTimeslotId() == classB.getTimeslotId()
+                        && classA.getClassId() != classB.getClassId()) {
+                    clashes++;
+                    break;
+                }
+            }
+
+            // Check if group is available
+            for (Class classB : this.classes) {
+                if (classA.getGroupId() == classB.getGroupId() && classA.getTimeslotId() == classB.getTimeslotId()
                         && classA.getClassId() != classB.getClassId()) {
                     clashes++;
                     break;

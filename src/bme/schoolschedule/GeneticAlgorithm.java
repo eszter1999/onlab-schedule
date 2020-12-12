@@ -32,13 +32,6 @@ public class GeneticAlgorithm {
             return population.getFittest(0).getFitness() == 1.0;
         }
 
-        /**
-         * Calculate individual's fitness value
-         *
-         * @param individual
-         * @param timetable
-         * @return fitness
-         */
         public double calcFitness(Individual individual, Timetable timetable) {
 
             // Create new timetable object to use -- cloned from an existing timetable

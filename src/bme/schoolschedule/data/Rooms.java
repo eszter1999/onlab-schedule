@@ -1,12 +1,10 @@
 package bme.schoolschedule.data;
 
-import bme.schoolschedule.room;
-
 public class Rooms {
-    int id;
-    room type;          //some lessons only can be held in a specific type of room
-    String name;        //unique, refers to location in the school
-    int capacity;       //capacity
+    private final int id;
+    private final room type;          //some lessons only can be held in a specific type of room
+    private final String name;        //unique, refers to location in the school
+    private final int capacity;       //capacity
 
     public Rooms(int id, room t, String n, int s) {
         this.id = id;

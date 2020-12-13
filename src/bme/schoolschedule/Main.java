@@ -1,16 +1,10 @@
 package bme.schoolschedule;
 
 
-import bme.schoolschedule.data.Group;
-import bme.schoolschedule.data.Teachers;
-import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import bme.schoolschedule.data.room;
 
 import java.io.*;
-import java.sql.Time;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 public class Main {
 
@@ -29,7 +23,7 @@ public class Main {
         int generation = 1;
 
         // Start evolution loop
-        while (!ga.isTerminationConditionMet(generation, 1000)
+        while (!ga.isTerminationConditionMet(generation, 1500)
                 && !ga.isTerminationConditionMet(population)) {
             // Print fitness
             System.out.println("G" + generation + " Best fitness: " + population.getFittest(0).getFitness());

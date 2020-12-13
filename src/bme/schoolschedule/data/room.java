@@ -1,4 +1,4 @@
-package bme.schoolschedule;
+package bme.schoolschedule.data;
 
 public enum room{
     PE,

@@ -1,9 +1,9 @@
 package bme.schoolschedule.data;
 
 public class Group {
-    final int id;
-    private String name;    //unique
-    private int size;     //number of students in class
+    final private int id;
+    final private String name;    //unique
+    final private int size;     //number of students in class
     private final int lessonsIds[];
 
     public Group(int i, String name, int number, int[] lessonsIds) {

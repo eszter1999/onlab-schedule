@@ -1,32 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8e89504-05bf-45b9-bff8-5a4a2ab73193" name="Default Changelist" comment="">
+    <list default="true" id="68a8b900-083c-4369-8044-3e8814071016" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/classes.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/classes.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/school-schedule/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/school-schedule/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/school-schedule/bme/schoolschedule/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/school-schedule/bme/schoolschedule/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/school-schedule/classes.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/school-schedule/classes.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bme/schoolschedule/Class.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bme/schoolschedule/Class.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bme/schoolschedule/ExcelExport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bme/schoolschedule/ExcelExport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bme/schoolschedule/Individual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bme/schoolschedule/Individual.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bme/schoolschedule/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bme/schoolschedule/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bme/schoolschedule/data/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bme/schoolschedule/data/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bme/schoolschedule/Timetable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bme/schoolschedule/Timetable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bme/schoolschedule/data/Lessons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bme/schoolschedule/data/Lessons.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bme/schoolschedule/data/Rooms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bme/schoolschedule/data/Rooms.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bme/schoolschedule/data/Teachers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bme/schoolschedule/data/Teachers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bme/schoolschedule/room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bme/schoolschedule/data/room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bme/schoolschedule/data/Timeslot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bme/schoolschedule/data/Timeslot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1lbBevjoL1Wq37sIe4NwPq5jZsT" />
+  <component name="ProjectId" id="1lbSkTlavvg7ve8RZFfOaYqMxUJ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -45,13 +31,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
@@ -61,88 +46,68 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e8e89504-05bf-45b9-bff8-5a4a2ab73193" name="Default Changelist" comment="" />
-      <created>1607856018461</created>
+      <changelist id="68a8b900-083c-4369-8044-3e8814071016" name="Default Changelist" comment="" />
+      <created>1607864443932</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1607856018461</updated>
-      <workItem from="1607856029034" duration="6125000" />
+      <updated>1607864443932</updated>
+      <workItem from="1607864453624" duration="2822000" />
+      <workItem from="1607879623309" duration="3015000" />
+      <workItem from="1607889578575" duration="7938000" />
+      <workItem from="1607944110418" duration="5194000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="0" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607803044790">
+    <state x="34" y="169" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607864488621">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1607803044790" />
-    <state x="275" y="322" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1607803039757">
+    <state x="34" y="169" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1607864488621" />
+    <state x="309" y="316" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1607864483580">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="275" y="322" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1607803039757" />
-    <state x="251" y="246" key="FileChooserDialogImpl" timestamp="1607857826520">
+    <state x="309" y="316" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1607864483580" />
+    <state x="216" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1607951074980">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="251" y="246" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1607857826520" />
-    <state width="1120" height="281" key="GridCell.Tab.0.bottom" timestamp="1607863707719">
+    <state x="216" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1607951074980" />
+    <state x="740" y="246" key="FileChooserDialogImpl" timestamp="1607946512809">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1120" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1607863707719" />
-    <state width="1120" height="281" key="GridCell.Tab.0.center" timestamp="1607863707719">
+    <state x="740" y="246" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1607946512809" />
+    <state width="461" height="718" key="GridCell.Tab.0.bottom" timestamp="1607905126533">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1120" height="281" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1607863707719" />
-    <state width="1120" height="281" key="GridCell.Tab.0.left" timestamp="1607863707719">
+    <state width="461" height="718" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1607905126533" />
+    <state width="461" height="718" key="GridCell.Tab.0.center" timestamp="1607905126533">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1120" height="281" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1607863707719" />
-    <state width="1120" height="281" key="GridCell.Tab.0.right" timestamp="1607863707719">
+    <state width="461" height="718" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1607905126533" />
+    <state width="461" height="718" key="GridCell.Tab.0.left" timestamp="1607905126533">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1120" height="281" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1607863707719" />
-    <state x="0" y="165" key="SettingsEditor" timestamp="1607857100980">
+    <state width="461" height="718" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1607905126533" />
+    <state width="461" height="718" key="GridCell.Tab.0.right" timestamp="1607905126533">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1607857100980" />
-    <state x="288" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607802941859">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="288" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1607802941859" />
-    <state x="128" y="259" width="909" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1607863699074">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="128" y="259" width="909" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1607863699074" />
-    <state x="62" y="140" width="1097" height="759" key="new project wizard" timestamp="1607856087844">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="62" y="140" width="1097" height="759" key="new project wizard/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1607856087844" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NullPointerException" package="java.lang" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state width="461" height="718" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1280.680@0.0.1920.1040" timestamp="1607905126533" />
   </component>
 </project>

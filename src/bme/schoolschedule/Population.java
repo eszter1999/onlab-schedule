@@ -26,19 +26,6 @@ public class Population {
         }
     }
 
-    public Population(int populationSize, int chromosomeLength) {
-        // Initial population
-        this.population = new Individual[populationSize];
-
-        // Loop over population size
-        for (int individualCount = 0; individualCount < populationSize; individualCount++) {
-            // Create individual
-            Individual individual = new Individual(chromosomeLength);
-            // Add individual to population
-            this.population[individualCount] = individual;
-        }
-    }
-
     public Individual[] getIndividuals() {
         return this.population;
     }
@@ -63,10 +50,6 @@ public class Population {
 
     public void setPopulationFitness(double fitness) {
         this.populationFitness = fitness;
-    }
-
-    public double getPopulationFitness() {
-        return this.populationFitness;
     }
 
     public int size() {

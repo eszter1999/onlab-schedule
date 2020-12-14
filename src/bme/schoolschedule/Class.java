@@ -1,15 +1,15 @@
 package bme.schoolschedule;
 
 public class Class {
-    private final int classId;
+    private final int id;
     private final int groupId;
     private final int lessonId;
     private int teacherId;
     private int timeslotId;
     private int roomId;
 
-    public Class(int classId, int groupId, int lessonId){
-        this.classId = classId;
+    public Class(int id, int groupId, int lessonId){
+        this.id = id;
         this.lessonId = lessonId;
         this.groupId = groupId;
     }
@@ -27,8 +27,8 @@ public class Class {
         this.roomId = roomId;
     }
 
-    public int getClassId(){
-        return this.classId;
+    public int getId(){
+        return this.id;
     }
 
     public int getGroupId(){

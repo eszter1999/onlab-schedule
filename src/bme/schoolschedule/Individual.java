@@ -3,8 +3,6 @@ package bme.schoolschedule;
 import bme.schoolschedule.data.Group;
 import bme.schoolschedule.data.Lessons;
 
-import java.util.ArrayList;
-
 public class Individual {
     private int[] chromosome;
     private double fitness = -1;
@@ -20,7 +18,7 @@ public class Individual {
             for (int LessonId : group.getLessonsIds()) {
 
                 // Add random time
-                int timeslotId = timetable.getRandomTimeslot().getTimeslotId();
+                int timeslotId = timetable.getRandomTimeslot().getId();
                 newChromosome[chromosomeIndex] = timeslotId;
                 chromosomeIndex++;
 
@@ -48,12 +46,6 @@ public class Individual {
         }
 
         this.chromosome = individual;
-    }
-
-
-    public Individual(int[] chromosome) {
-        // Create individual chromosome
-        this.chromosome = chromosome;
     }
 
     public int[] getChromosome() {
@@ -86,15 +78,6 @@ public class Individual {
             output += this.chromosome[gene] + ",";
         }
         return output;
-    }
-
-    public boolean containsGene(int gene) {
-        for (int i = 0; i < this.chromosome.length; i++) {
-            if (this.chromosome[i] == gene) {
-                return true;
-            }
-        }
-        return false;
     }
 
 }

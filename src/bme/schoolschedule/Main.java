@@ -11,7 +11,8 @@ public class Main {
     public static void main(String[] args) throws IOException {
         Timetable timetable = initializeTimetable();
 
-        GeneticAlgorithm ga = new GeneticAlgorithm(101, 0.001, 0.9, 2, 5);
+        GeneticAlgorithm ga = new GeneticAlgorithm(101, 0.002,
+                0.95, 2, 5);
 
         // Initialize population
         Population population = ga.initPopulation(timetable);
@@ -23,7 +24,7 @@ public class Main {
         int generation = 1;
 
         // Start evolution loop
-        while (!ga.isTerminationConditionMet(generation, 1500)
+        while (!ga.isTerminationConditionMet(generation, 2000)
                 && !ga.isTerminationConditionMet(population)) {
             // Print fitness
             System.out.println("G" + generation + " Best fitness: " + population.getFittest(0).getFitness());
@@ -120,14 +121,14 @@ public class Main {
         }
     }
 
-    private static ArrayList getClasses(Timetable timetable, String group){
+/*    private static ArrayList getClasses(Timetable timetable, String group){
         ArrayList<Class> classes =  new ArrayList<>();
         for (Class cl : classes) {
             if(timetable.getGroup(cl.getGroupId()).getName().equals(group))
                 classes.add(cl);
         }
         return classes;
-    }
+    }*/
 }
 
 

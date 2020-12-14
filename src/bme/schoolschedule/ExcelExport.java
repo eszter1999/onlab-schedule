@@ -70,7 +70,7 @@ public class ExcelExport {
                         .setCellValue(timetable.getRoom(bestClass.getRoomId()).getName());
 
                 row.createCell(4)
-                        .setCellValue(timetable.getTimeslot(bestClass.getTimeslotId()).getTimeslot());
+                        .setCellValue(timetable.getTimeslot(bestClass.getTimeslotId()).getTime());
             }
 
             for (int j = 0; j < columns.length; j++) {

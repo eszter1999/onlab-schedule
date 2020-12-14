@@ -27,6 +27,23 @@ public class Timetable {
 
     private int numClasses = 0;
 
+    public void assortRooms(){
+        this.pe = getRooms(room.PE);
+        this.it = getRooms(room.IT);
+        this.normal = getRooms(room.NORMAL);
+        this.bio = getRooms(room.BIO);
+        this.phy = getRooms(room.PHY);
+        this.chem = getRooms(room.CHEM);
+    }
+
+    public Timeslot getRandomTimeslot() {
+        int low = 0;
+        int high = timeslots.size()-1;
+        return timeslots.get(getRandomNumber(low,high));
+    }
+
+    /////*constructors*/////
+
     public Timetable() {
         randomGenerator = new Random();
         this.rooms = new HashMap<>();
@@ -57,6 +74,8 @@ public class Timetable {
         this.chem = cloneable.getRooms(room.CHEM);
     }
 
+
+    /////*getters*/////
     private HashMap<Integer, Group> getGroups() {
         return this.groups;
     }
@@ -77,14 +96,8 @@ public class Timetable {
         return this.teachers;
     }
 
-    public void assortRooms(){
-        this.pe = getRooms(room.PE);
-        this.it = getRooms(room.IT);
-        this.normal = getRooms(room.NORMAL);
-        this.bio = getRooms(room.BIO);
-        this.phy = getRooms(room.PHY);
-        this.chem = getRooms(room.CHEM);
-    }
+
+    /////*adders*/////
 
     //add room to timetable
     public void addRoom(int roomId, room type, String roomName, int capacity) {
@@ -186,11 +199,7 @@ public class Timetable {
         return r;
     }
 
-    public Timeslot getRandomTimeslot() {
-        int low = 0;
-        int high = timeslots.size()-1;
-        return timeslots.get(getRandomNumber(low,high));
-    }
+
 
 
     public Group[] getGroupsAsArray() {
@@ -308,7 +317,7 @@ public class Timetable {
             // Check if room is taken
             for (Class classB : this.classes) {
                 if (classA.getRoomId() == classB.getRoomId() && classA.getTimeslotId() == classB.getTimeslotId()
-                        && classA.getClassId() != classB.getClassId()) {
+                        && classA.getId() != classB.getId()) {
                     clashes++;
                     room++;
                     break;
@@ -318,7 +327,7 @@ public class Timetable {
             // Check if professor is available
             for (Class classB : this.classes) {
                 if (classA.getTeacherId() == classB.getTeacherId() && classA.getTimeslotId() == classB.getTimeslotId()
-                        && classA.getClassId() != classB.getClassId()) {
+                        && classA.getId() != classB.getId()) {
                     clashes++;
                     teacher++;
                     break;
@@ -328,7 +337,7 @@ public class Timetable {
             // Check if group is available
             for (Class classB : this.classes) {
                 if (classA.getGroupId() == classB.getGroupId() && classA.getTimeslotId() == classB.getTimeslotId()
-                        && classA.getClassId() != classB.getClassId()) {
+                        && classA.getId() != classB.getId()) {
                     clashes++;
                     group++;
                     break;
@@ -355,7 +364,7 @@ public class Timetable {
     public void kiirasTS(){
         for (Map.Entry<Integer, Timeslot> entry : timeslots.entrySet()) {
             Timeslot value = entry.getValue();
-            System.out.println(value.getTimeslot() + "\t" + entry.getKey());
+            System.out.println(value.getTime() + "\t" + entry.getKey());
         }
     }
 

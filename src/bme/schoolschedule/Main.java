@@ -52,9 +52,9 @@ public class Main {
         System.out.println("TeacherClashes: " + timetable.calcClashes()[2]);
         System.out.println("GroupClashes: " + timetable.calcClashes()[3]);
 
-        //int[] teachers = timetable.printTeachers();
-        //for(int i = 0; i < teachers.length; i++)
-        //    System.out.println("teacher id: " + i + " working hour: " + teachers[i]);
+        /*int[] teachers = timetable.printTeachers();
+        for(int i = 0; i < teachers.length; i++)
+            System.out.println("teacher id: " + i + " working hour: " + teachers[i]);*/
 
         // Print classes
         System.out.println();
@@ -120,15 +120,6 @@ public class Main {
             e.printStackTrace();
         }
     }
-
-/*    private static ArrayList getClasses(Timetable timetable, String group){
-        ArrayList<Class> classes =  new ArrayList<>();
-        for (Class cl : classes) {
-            if(timetable.getGroup(cl.getGroupId()).getName().equals(group))
-                classes.add(cl);
-        }
-        return classes;
-    }*/
 }
 
 

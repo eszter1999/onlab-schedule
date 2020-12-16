@@ -4,7 +4,7 @@ import bme.schoolschedule.data.Group;
 import bme.schoolschedule.data.Lessons;
 
 public class Individual {
-    private int[] chromosome;
+    private final int[] chromosome;
     private double fitness = -1;
 
     public Individual(Timetable timetable) {
@@ -14,7 +14,6 @@ public class Individual {
         int[] newChromosome = new int[chromosomeLength];
         int chromosomeIndex = 0;
         for (Group group : timetable.getGroupsAsArray()) {
-            // Loop through module
             for (int LessonId : group.getLessonsIds()) {
 
                 // Add random time
@@ -37,7 +36,6 @@ public class Individual {
     }
 
     public Individual(int chromosomeLength) {
-        // Create random individual
         int[] individual;
         individual = new int[chromosomeLength];
 

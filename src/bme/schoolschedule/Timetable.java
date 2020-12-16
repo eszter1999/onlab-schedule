@@ -287,7 +287,7 @@ public class Timetable {
                 classes[classIndex].setRoomId(chromosome[chromosomePos]);
                 chromosomePos++;
 
-                // Add professor
+                // Add teacher
                 classes[classIndex].addTeacher(chromosome[chromosomePos]);
                 chromosomePos++;
 

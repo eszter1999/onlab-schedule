@@ -15,7 +15,6 @@ public class ExcelExport {
     ;
     private static String[] columns = {"Group", "Lesson", "Teacher", "Room", "Time"};
     Class[] classes;
-    String group;
     Timetable timetable;
 
     public ExcelExport(Timetable timetable) throws IOException {

@@ -89,9 +89,7 @@ public class GeneticAlgorithm {
                 for (int geneIndex = 0; geneIndex < individual.getChromosomeLength(); geneIndex++) {
                     // Skip mutation if this is an elite individual
                     if (populationIndex > this.elitismCount) {
-                        // Does this gene need mutation?
                         if (this.mutationRate > Math.random()) {
-                            // Swap for new gene
                             individual.setGene(geneIndex, randomIndividual.getGene(geneIndex));
                         }
                     }

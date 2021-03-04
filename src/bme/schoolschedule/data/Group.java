@@ -1,27 +1,22 @@
 package bme.schoolschedule.data;
 
 public class Group {
-    private final int ID;
-    private final int size;
-    private final int moduleIDs[];
+    final private int id;
+    final private String name;    //unique
+    final private int size;     //number of students in class
+    private final int lessonsIds[];
 
-    public Group(int groupId, int groupSize, int moduleIds[]){
-        this.ID = groupId;
-        this.size = groupSize;
-        this.moduleIDs = moduleIds;
+    public Group(int i, String name, int number, int[] lessonsIds) {
+        id = i;
+        this.name = name;
+        this.size = number;
+        this.lessonsIds = lessonsIds;
     }
 
-    /////*getters*/////
-
-    public int getID(){
-        return this.ID;
+    public String getName(){
+        return name;
     }
-
-    public int getSize(){
-        return this.size;
-    }
-
-    public int[] getModuleIDs(){
-        return this.moduleIDs;
-    }
+    public int getSize() {return size;}
+    public int getId() {return id;}
+    public int[] getLessonsIds() {return lessonsIds;}
 }
